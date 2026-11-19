@@ -1,0 +1,1078 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TERREIN — 5-Year Sports Venue Development & Pitch Blueprint (2026–2031)</title>
+  <meta name="description" content="A 5-year vision sports venue development and rental company specializing in next-generation Futsal and Football arenas, acoustic pavilions, and digital booking ecosystems.">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            pitch: {
+              emerald: '#00e575',
+              dim: 'rgba(0, 229, 117, 0.12)',
+              deep: '#062817',
+              dark: '#070808',
+              surface: '#0d100e',
+              border: 'rgba(255, 255, 255, 0.08)'
+            },
+            bone: {
+              DEFAULT: '#f5f4ee',
+              muted: '#9ca3af',
+              dark: '#1e2420'
+            }
+          },
+          fontFamily: {
+            display: ['Syne', 'sans-serif'],
+            body: ['Plus Jakarta Sans', 'sans-serif'],
+            mono: ['Space Mono', 'monospace']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Custom Editorial CSS -->
+  <link rel="stylesheet" href="assets/css/editorial.css">
+</head>
+<body class="bg-pitch-dark text-bone antialiased selection:bg-pitch-emerald selection:text-black">
+
+  <!-- Tactile Film Grain Overlay -->
+  <div class="grain-overlay" aria-hidden="true"></div>
+
+  <!-- Cursor Follower (Desktop) -->
+  <div class="cursor-dot" aria-hidden="true"></div>
+  <div class="cursor-ring" aria-hidden="true"></div>
+
+  <!-- SVG Ink Filter Definition for Liquid Bleed Effects -->
+  <svg class="hidden" aria-hidden="true">
+    <defs>
+      <filter id="ink-filter" x="-20%" y="-20%" width="140%" height="140%">
+        <feTurbulence type="fractalNoise" baseFrequency="0.045" numOctaves="4" result="noise" />
+        <feDisplacementMap in="SourceGraphic" in2="noise" scale="18" xChannelSelector="R" yChannelSelector="G" />
+      </filter>
+    </defs>
+  </svg>
+
+  <!-- 1. MINIMALIST NAVBAR -->
+  <header class="fixed top-0 left-0 right-0 z-50 bg-pitch-dark/85 backdrop-blur-md border-b border-white/5 transition-all">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      
+      <!-- Brand Wordmark & Metadata -->
+      <a href="#" class="flex items-center gap-3.5 group">
+        <div class="w-8 h-8 rounded-sm bg-white/5 border border-white/10 flex items-center justify-center group-hover:border-pitch-emerald transition-colors">
+          <div class="w-3.5 h-3.5 border-2 border-pitch-emerald rotate-45 group-hover:rotate-90 transition-transform duration-500"></div>
+        </div>
+        <div class="flex flex-col">
+          <span class="font-display font-extrabold text-xl tracking-tight text-white group-hover:text-pitch-emerald transition-colors">TERREIN</span>
+          <span class="font-mono text-[10px] tracking-wider text-white/40 uppercase">Venues & Arenas · 2026–2031</span>
+        </div>
+      </a>
+
+      <!-- Desktop Anchor Links -->
+      <nav class="hidden md:flex items-center gap-8 text-xs uppercase tracking-widest font-mono text-white/70">
+        <a href="#vision" class="hover:text-pitch-emerald transition-colors">Vision</a>
+        <a href="#arenas" class="hover:text-pitch-emerald transition-colors">Arenas</a>
+        <a href="#roadmap" class="hover:text-pitch-emerald transition-colors">Roadmap</a>
+        <a href="#rental" class="hover:text-pitch-emerald transition-colors">Rental Model</a>
+        <a href="#collaborate" class="hover:text-pitch-emerald transition-colors">Collaborate</a>
+      </nav>
+
+      <!-- Right Utility Actions -->
+      <div class="flex items-center gap-4">
+        <!-- Audio Feedback Toggle Button -->
+        <button id="soundToggleBtn" title="Toggle Tactile Audio" class="w-9 h-9 rounded-full border border-white/10 flex items-center justify-center text-white/60 hover:text-white hover:border-white/20 transition-all text-xs" aria-label="Toggle Sound Effects">
+          <svg id="soundIcon" class="w-4 h-4 fill-none stroke-current" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"/>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2"/>
+          </svg>
+        </button>
+
+        <!-- Status Badge -->
+        <div class="hidden lg:flex items-center gap-2 px-3 py-1.5 rounded-full border border-pitch-emerald/30 bg-pitch-emerald/10 text-pitch-emerald text-[11px] font-mono">
+          <span class="pulse-dot"></span>
+          <span>5-YR BLUEPRINT ACTIVE</span>
+        </div>
+
+        <!-- Partner With Us Button -->
+        <button class="open-modal-btn btn-editorial px-5 py-2.5 rounded-sm border border-pitch-emerald text-pitch-emerald text-xs font-mono uppercase tracking-widest font-semibold hover:border-pitch-emerald" data-interest="investor">
+          <span>Partner With Us</span>
+        </button>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button id="mobileMenuBtn" class="md:hidden w-10 h-10 flex flex-col justify-center items-center gap-1.5 text-white focus:outline-none" aria-label="Open Navigation Menu">
+          <span class="w-5 h-0.5 bg-white"></span>
+          <span class="w-5 h-0.5 bg-white"></span>
+          <span class="w-3.5 h-0.5 bg-white self-start"></span>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobileNavDrawer" class="hidden md:hidden border-t border-white/10 bg-pitch-dark/95 backdrop-blur-xl px-6 py-6 transition-all">
+      <nav class="flex flex-col gap-4 font-mono text-sm uppercase tracking-wider text-white/80">
+        <a href="#vision" class="mobile-nav-link py-2 border-b border-white/5 hover:text-pitch-emerald">Vision</a>
+        <a href="#arenas" class="mobile-nav-link py-2 border-b border-white/5 hover:text-pitch-emerald">Arenas & Facilities</a>
+        <a href="#roadmap" class="mobile-nav-link py-2 border-b border-white/5 hover:text-pitch-emerald">5-Year Roadmap</a>
+        <a href="#rental" class="mobile-nav-link py-2 border-b border-white/5 hover:text-pitch-emerald">Rental & Subscriptions</a>
+        <a href="#collaborate" class="mobile-nav-link py-2 hover:text-pitch-emerald">Collaborate</a>
+      </nav>
+      <div class="mt-6 pt-4 border-t border-white/10 flex items-center justify-between text-xs font-mono text-white/50">
+        <span>STRATEGIC BLUEPRINT 2026–2031</span>
+        <span class="text-pitch-emerald">PHASE 1 IN PROGRESS</span>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- 2. HERO SECTION (INK REVEAL OPENING) -->
+    <section id="hero" class="relative min-h-screen flex flex-col justify-between pt-28 pb-12 px-6 overflow-hidden bg-blueprint-grid">
+      
+      <!-- Interactive Stadium Mask Container -->
+      <div id="heroContainer" class="absolute inset-0 z-0 cursor-crosshair select-none">
+        
+        <!-- Background Layer: Realistic Floodlit Night Pitch Photography -->
+        <div class="absolute inset-0 bg-cover bg-center filter brightness-105 contrast-110" style="background-image: url('https://images.unsplash.com/photo-1529900748604-07564a03e7a6?auto=format&fit=crop&w=2000&q=85');">
+          <!-- Deep pitch emerald tint overlay -->
+          <div class="absolute inset-0 bg-gradient-to-t from-pitch-dark via-transparent to-pitch-dark/70"></div>
+          <div class="absolute inset-0 bg-pitch-dark/30 mix-blend-multiply"></div>
+        </div>
+
+        <!-- Middle Canvas: The Interactive Ink Bleed Mask -->
+        <canvas id="heroInkCanvas" class="w-full h-full"></canvas>
+
+        <!-- Architectural Blueprint Markings & Compass Lines (Under-canvas watermark) -->
+        <div class="absolute inset-0 pointer-events-none opacity-25 flex items-center justify-center">
+          <svg class="w-3/4 max-w-4xl h-auto" viewBox="0 0 800 500" fill="none">
+            <rect x="50" y="40" width="700" height="420" stroke="rgba(0, 229, 117, 0.4)" stroke-width="1.5" stroke-dasharray="8 8"/>
+            <line x1="400" y1="40" x2="400" y2="460" stroke="rgba(0, 229, 117, 0.4)" stroke-width="1.5"/>
+            <circle cx="400" cy="250" r="70" stroke="rgba(0, 229, 117, 0.4)" stroke-width="1.5"/>
+            <rect x="50" y="160" width="120" height="180" stroke="rgba(0, 229, 117, 0.3)" stroke-width="1"/>
+            <rect x="630" y="160" width="120" height="180" stroke="rgba(0, 229, 117, 0.3)" stroke-width="1"/>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Hero Header & Editorial Copy (Elevated Layer) -->
+      <div class="relative z-10 max-w-7xl mx-auto w-full mt-8 md:mt-16 pointer-events-none">
+        
+        <!-- Metadata Pill -->
+        <div class="flex items-center gap-3 mb-6 pointer-events-auto">
+          <span class="badge-status">
+            <span class="pulse-dot"></span>
+            VISION BLUEPRINT · 2026 TO 2031
+          </span>
+          <span id="coordinateDisplay" class="font-mono text-xs text-white/50 tracking-wider">COORD: 7.1420° N, 112.7932° E</span>
+          <span class="hidden sm:inline-block text-white/30">|</span>
+          <span id="luxDisplay" class="hidden sm:inline-block font-mono text-xs text-pitch-emerald/80 tracking-wider">ILLUM: 500 LUX (6500K LED)</span>
+        </div>
+
+        <!-- Grand Editorial Headline -->
+        <h1 class="font-display font-extrabold text-4xl sm:text-6xl md:text-7xl lg:text-8xl tracking-tight leading-[0.92] text-white uppercase max-w-5xl">
+          Crafting the <span class="text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-white/40">Future</span> of the <span class="text-pitch-emerald underline decoration-pitch-emerald/40 underline-offset-8">Pitch</span>.
+        </h1>
+
+        <!-- Subheadline & Thesis Statement -->
+        <div class="mt-8 grid md:grid-cols-12 gap-8 items-start">
+          <p class="md:col-span-7 text-lg sm:text-xl text-white/80 font-normal leading-relaxed">
+            A disciplined 5-year masterplan to engineer next-generation Futsal and Football arenas across primary metropolitan hubs. Elevating physical play with FIFA-grade shockpad turf, anti-glare luminaire design, and frictionless automated booking.
+          </p>
+          
+          <!-- Interactive Ink Reveal Controls -->
+          <div class="md:col-span-5 flex flex-col gap-3 pointer-events-auto">
+            <div class="p-4 rounded-md border border-white/10 bg-pitch-dark/80 backdrop-blur-md">
+              <div class="flex items-center justify-between text-xs font-mono text-white/50 mb-2">
+                <span class="flex items-center gap-1.5">
+                  <svg class="w-3.5 h-3.5 text-pitch-emerald" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122"/>
+                  </svg>
+                  INTERACTIVE INK MASK
+                </span>
+                <span class="text-pitch-emerald">MOVE CURSOR TO BLEED</span>
+              </div>
+              <p class="text-xs text-white/70 mb-3">
+                Hover or drag across the blueprint canvas to dissolve the monochrome sketch and reveal the illuminated stadium beneath.
+              </p>
+              <div class="flex items-center gap-2">
+                <button id="revealAllHeroBtn" class="px-3 py-1.5 rounded border border-pitch-emerald/40 bg-pitch-emerald/10 text-pitch-emerald hover:bg-pitch-emerald hover:text-black transition-all text-xs font-mono font-medium">
+                  Dissolve Mask
+                </button>
+                <button id="resetHeroMaskBtn" class="px-3 py-1.5 rounded border border-white/10 bg-white/5 text-white/60 hover:text-white transition-all text-xs font-mono">
+                  Reset Ink
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Hero Bottom Specifications Ticker -->
+      <div class="relative z-10 max-w-7xl mx-auto w-full pt-10 border-t border-white/10 grid grid-cols-2 sm:grid-cols-4 gap-6">
+        <div>
+          <span class="block font-mono text-[11px] text-white/40 uppercase tracking-wider mb-1">01 / Master Footprint</span>
+          <span class="font-display font-bold text-2xl text-white">50,000 m²</span>
+          <span class="block text-xs text-white/50">Targeted land parcel portfolio</span>
+        </div>
+        <div>
+          <span class="block font-mono text-[11px] text-white/40 uppercase tracking-wider mb-1">02 / Turf Classification</span>
+          <span class="font-display font-bold text-2xl text-pitch-emerald">FIFA Quality Pro</span>
+          <span class="block text-xs text-white/50">Certified shockpad cushioning</span>
+        </div>
+        <div>
+          <span class="block font-mono text-[11px] text-white/40 uppercase tracking-wider mb-1">03 / Pitch Typologies</span>
+          <span class="font-display font-bold text-2xl text-white">Futsal + 7s & 11s</span>
+          <span class="block text-xs text-white/50">Indoor & outdoor floodlit venues</span>
+        </div>
+        <div>
+          <span class="block font-mono text-[11px] text-white/40 uppercase tracking-wider mb-1">04 / Horizon Schedule</span>
+          <span class="font-display font-bold text-2xl text-white">2026 — 2031</span>
+          <span class="block text-xs text-white/50">4-phase staged capital rollout</span>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- 3. THE 5-YEAR VISION (ABOUT US) -->
+    <section id="vision" class="py-28 px-6 border-t border-white/5 bg-pitch-surface relative">
+      <div class="max-w-7xl mx-auto">
+        
+        <!-- Section Tag -->
+        <div class="flex items-center gap-2 mb-4 font-mono text-xs uppercase tracking-widest text-pitch-emerald">
+          <span class="w-2 h-2 rounded-full bg-pitch-emerald"></span>
+          <span>Section 01 // The Strategic Thesis</span>
+        </div>
+
+        <!-- Asymmetric Editorial Layout -->
+        <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+          
+          <!-- Left Column: The Problem & Vision Statement -->
+          <div class="lg:col-span-5 ink-reveal-init">
+            <h2 class="font-display font-bold text-3xl sm:text-4xl lg:text-5xl tracking-tight leading-tight uppercase text-white mb-6">
+              Most Community Pitches Were Built for Yesterday.
+            </h2>
+            <div class="space-y-4 text-white/70 leading-relaxed text-base">
+              <p>
+                Inadequate sub-drainage turns evening matches into quagmires. Subpar, unpadded artificial turf strains player ligaments. Glaring sodium lights blind goalkeepers, while booking systems still rely on disjointed messaging chats and manual bank transfers.
+              </p>
+              <p>
+                <strong class="text-white font-medium">TERREIN is founded to recalibrate amateur and semi-professional sports infrastructure.</strong> Over our 5-year trajectory, we are delivering sports parks conceived as holistic, high-performance community ecosystems—merging stadium-grade turf systems with clean architectural hospitality.
+              </p>
+            </div>
+
+            <!-- Architectural Blueprint Detail Callout -->
+            <div class="mt-8 p-5 rounded border border-white/10 bg-white/[0.02]">
+              <div class="flex items-center justify-between mb-2">
+                <span class="font-mono text-xs uppercase tracking-wider text-pitch-emerald">Subsurface Matrix</span>
+                <span class="font-mono text-xs text-white/40">GEO-DRAIN V4</span>
+              </div>
+              <p class="text-xs text-white/60">
+                150mm crushed basalt foundation paired with cellular drainage pods ensures zero pitch puddling, even through monsoon downpours exceeding 120mm/hr.
+              </p>
+            </div>
+          </div>
+
+          <!-- Right Column: The 3 Core Pillars -->
+          <div class="lg:col-span-7 space-y-6">
+            
+            <!-- Pillar 1 -->
+            <div class="p-8 rounded-lg border border-white/10 bg-pitch-dark hover:border-pitch-emerald/50 transition-all duration-300 ink-reveal-init delay-100 group">
+              <div class="flex items-start justify-between mb-4">
+                <span class="font-mono text-xs text-pitch-emerald tracking-widest uppercase">Pillar 01 / Turf Elevation</span>
+                <span class="font-mono text-xs text-white/30">SPEC: 50MM-EPDM</span>
+              </div>
+              <h3 class="font-display font-bold text-2xl text-white mb-2 group-hover:text-pitch-emerald transition-colors">
+                Biomechanically Validated Turf & Acoustic Pavilions
+              </h3>
+              <p class="text-sm text-white/70 leading-relaxed">
+                Every court utilizes an underlying 12mm expanded polyolefin shockpad to absorb up to 60% of joint impact. For our indoor futsal arenas, suspended mineral baffle ceilings absorb crowd roar and whistle echoes, delivering studio-grade auditory comfort.
+              </p>
+            </div>
+
+            <!-- Pillar 2 -->
+            <div class="p-8 rounded-lg border border-white/10 bg-pitch-dark hover:border-pitch-emerald/50 transition-all duration-300 ink-reveal-init delay-200 group">
+              <div class="flex items-start justify-between mb-4">
+                <span class="font-mono text-xs text-pitch-emerald tracking-widest uppercase">Pillar 02 / Frictionless Tech</span>
+                <span class="font-mono text-xs text-white/30">API: SMART-ACCESS</span>
+              </div>
+              <h3 class="font-display font-bold text-2xl text-white mb-2 group-hover:text-pitch-emerald transition-colors">
+                Autonomous Access, Split Billing & Match Clips
+              </h3>
+              <p class="text-sm text-white/70 leading-relaxed">
+                Players unlock pitch gates via encrypted dynamic QR codes on their mobile phones. Pitch lights automatically ignite 10 minutes prior to kickoff. Built-in AI mast cameras record highlight reels and allow team captains to split match fees in two taps.
+              </p>
+            </div>
+
+            <!-- Pillar 3 -->
+            <div class="p-8 rounded-lg border border-white/10 bg-pitch-dark hover:border-pitch-emerald/50 transition-all duration-300 ink-reveal-init delay-300 group">
+              <div class="flex items-start justify-between mb-4">
+                <span class="font-mono text-xs text-pitch-emerald tracking-widest uppercase">Pillar 03 / Third-Place Culture</span>
+                <span class="font-mono text-xs text-white/30">AMENITY: CLUBHOUSE</span>
+              </div>
+              <h3 class="font-display font-bold text-2xl text-white mb-2 group-hover:text-pitch-emerald transition-colors">
+                The Athlete's Clubhouse & Post-Match Recovery
+              </h3>
+              <p class="text-sm text-white/70 leading-relaxed">
+                Transforming matchday from a transactional 60-minute booking into a social lifestyle destination. Featuring dual ice bath plunge pools, rain shower suites, specialty espresso bars, and co-working viewing mezzanines overlooking the pitch.
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 4. PLANNED ARENAS & FACILITIES (INTERACTIVE INK-REVEAL SHOWCASE) -->
+    <section id="arenas" class="py-28 px-6 border-t border-white/5 bg-pitch-dark relative overflow-hidden">
+      <div class="max-w-7xl mx-auto">
+        
+        <!-- Header & Tab Navigation -->
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+          <div>
+            <div class="flex items-center gap-2 mb-3 font-mono text-xs uppercase tracking-widest text-pitch-emerald">
+              <span class="w-2 h-2 rounded-full bg-pitch-emerald"></span>
+              <span>Section 02 // Venue Architecture</span>
+            </div>
+            <h2 class="font-display font-bold text-3xl sm:text-5xl uppercase tracking-tight text-white">
+              Planned Arenas & Facilities
+            </h2>
+          </div>
+
+          <!-- Arena Switcher Tabs -->
+          <div class="flex flex-wrap items-center gap-2 font-mono text-xs">
+            <button class="arena-tab-btn px-4 py-2.5 rounded-sm border transition-all" data-arena="futsal">
+              01. Indoor Futsal
+            </button>
+            <button class="arena-tab-btn px-4 py-2.5 rounded-sm border transition-all" data-arena="miniSoccer">
+              02. Mini Soccer & Pitch
+            </button>
+            <button class="arena-tab-btn px-4 py-2.5 rounded-sm border transition-all" data-arena="clubhouse">
+              03. Clubhouse & Recovery
+            </button>
+          </div>
+        </div>
+
+        <!-- Interactive Showcase Card Grid -->
+        <div class="grid lg:grid-cols-12 gap-8 items-stretch">
+          
+          <!-- Left Column: Interactive Before/After Blueprint vs. Realized Pitch Slider -->
+          <div class="lg:col-span-7 flex flex-col">
+            <div class="relative rounded-lg overflow-hidden border border-white/10 bg-black aspect-[16/10] slider-container shadow-2xl" id="arenaSlider">
+              
+              <!-- Bottom Layer: Realized Photographic Venue Render -->
+              <img id="sliderRealImg" src="https://images.unsplash.com/photo-1529900748604-07564a03e7a6?auto=format&fit=crop&w=1400&q=80" alt="Realized Arena Render" class="w-full h-full object-cover">
+              
+              <!-- Top Layer: Monochrome Architectural Blueprint Overlay with Clipping -->
+              <div id="sliderBlueprintWrap" class="slider-blueprint border-r border-pitch-emerald/80" style="width: 50%;">
+                <img id="sliderBlueprintImg" src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&w=1400&q=80" alt="Architectural Blueprint Draft" class="w-full h-full object-cover filter grayscale contrast-125 brightness-75">
+                <!-- Blueprint cyan-grid wash -->
+                <div class="absolute inset-0 bg-pitch-deep/40 mix-blend-color"></div>
+                <!-- Blueprint Badge -->
+                <div class="absolute top-4 left-4 px-2.5 py-1 rounded bg-black/80 border border-white/20 text-[10px] font-mono text-white/70 uppercase">
+                  Draft Blueprint
+                </div>
+              </div>
+
+              <!-- Draggable Divider Handle -->
+              <div id="sliderHandle" class="slider-handle" style="left: 50%;"></div>
+
+              <!-- Realized Badge -->
+              <div class="absolute top-4 right-4 px-2.5 py-1 rounded bg-pitch-dark/80 border border-pitch-emerald/40 text-[10px] font-mono text-pitch-emerald uppercase pointer-events-none">
+                Realized Specification
+              </div>
+
+              <!-- Instructions Pill -->
+              <div class="absolute bottom-4 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full bg-black/75 backdrop-blur-md border border-white/10 text-[11px] font-mono text-white/60 pointer-events-none flex items-center gap-2">
+                <svg class="w-3.5 h-3.5 text-pitch-emerald" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l4-4 4 4m0 6l-4 4-4-4"/>
+                </svg>
+                <span>Drag or hover horizontally to reveal blueprint vs. build</span>
+              </div>
+            </div>
+
+            <!-- Under-preview Metadata Footer -->
+            <div class="mt-4 flex items-center justify-between text-xs font-mono text-white/40 px-2">
+              <span>TERREIN VENUE ARCHIVE // 2026-ARCH-04</span>
+              <span class="text-pitch-emerald/70">AUTOCAD & REVIT CERTIFIED BIM</span>
+            </div>
+          </div>
+
+          <!-- Right Column: Dynamic Architectural Specs & Facility Dossier -->
+          <div class="lg:col-span-5 flex flex-col justify-between p-8 rounded-lg border border-white/10 bg-pitch-surface">
+            <div>
+              <div class="flex items-center justify-between mb-3">
+                <span class="font-mono text-xs uppercase tracking-widest text-pitch-emerald">Facility Dossier</span>
+                <span class="font-mono text-xs text-white/40">REF // REV-2026</span>
+              </div>
+
+              <h3 id="arenaTitle" class="font-display font-bold text-3xl text-white mb-2">
+                Indoor Futsal Arena
+              </h3>
+              <p id="arenaSubtitle" class="font-mono text-xs text-pitch-emerald/90 uppercase tracking-wider mb-4">
+                FIFA-Grade 40m × 20m Court with Acoustic Dampening
+              </p>
+              <p id="arenaDescription" class="text-sm text-white/70 leading-relaxed mb-6">
+                Engineered for high-intensity 5-a-side play. Incorporates resilient shockpad subflooring, acoustic ceiling baffle arrays reducing court reverberation by 65%, and glare-free 500-lux vertical LED arrays.
+              </p>
+
+              <!-- Technical Specifications Grid -->
+              <h4 class="font-mono text-xs uppercase tracking-wider text-white/50 mb-3">
+                Structural & Performance Parameters:
+              </h4>
+              <div id="arenaSpecsList" class="grid grid-cols-2 gap-2 mb-6">
+                <!-- Dynamically populated via JS -->
+              </div>
+            </div>
+
+            <!-- Facility Action -->
+            <div class="pt-6 border-t border-white/10 flex items-center justify-between">
+              <span class="text-xs font-mono text-white/50">Scheduled for Phase 02 (2028)</span>
+              <button class="open-modal-btn text-xs font-mono uppercase text-pitch-emerald hover:underline flex items-center gap-1" data-interest="facility">
+                <span>Request Facility Blueprints</span>
+                <span>→</span>
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 5. 5-YEAR DEVELOPMENT ROADMAP (2026–2031) -->
+    <section id="roadmap" class="py-28 px-6 border-t border-white/5 bg-pitch-surface relative">
+      <div class="max-w-7xl mx-auto">
+        
+        <!-- Header -->
+        <div class="max-w-3xl mb-14">
+          <div class="flex items-center gap-2 mb-3 font-mono text-xs uppercase tracking-widest text-pitch-emerald">
+            <span class="w-2 h-2 rounded-full bg-pitch-emerald"></span>
+            <span>Section 03 // 5-Year Capital & Development Horizon</span>
+          </div>
+          <h2 class="font-display font-bold text-3xl sm:text-5xl uppercase tracking-tight text-white mb-4">
+            Development Roadmap (2026–2031)
+          </h2>
+          <p class="text-white/70 text-base">
+            A milestone-gated deployment structure ensuring disciplined capital stewardship, municipal permitting compliance, and phased sports infrastructure delivery.
+          </p>
+        </div>
+
+        <!-- Horizontal Minimalist Timeline Switcher -->
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-10">
+          
+          <button class="phase-selector-btn phase-step-active text-left p-5 rounded-lg border border-white/10 bg-pitch-dark hover:border-pitch-emerald/40 transition-all" data-phase="phase1">
+            <span class="phase-number block text-pitch-emerald mb-1">01 / HORIZON</span>
+            <span class="font-display font-bold text-lg text-white block">2026 — 2027</span>
+            <span class="text-xs text-white/50 line-clamp-1">Land Acquisition & Permits</span>
+          </button>
+
+          <button class="phase-selector-btn text-left p-5 rounded-lg border border-white/10 bg-pitch-dark hover:border-pitch-emerald/40 transition-all" data-phase="phase2">
+            <span class="phase-number block text-pitch-emerald mb-1">02 / GROUNDBREAK</span>
+            <span class="font-display font-bold text-lg text-white block">2028</span>
+            <span class="text-xs text-white/50 line-clamp-1">Flagship Arena Build</span>
+          </button>
+
+          <button class="phase-selector-btn text-left p-5 rounded-lg border border-white/10 bg-pitch-dark hover:border-pitch-emerald/40 transition-all" data-phase="phase3">
+            <span class="phase-number block text-pitch-emerald mb-1">03 / COMMERCIAL</span>
+            <span class="font-display font-bold text-lg text-white block">2029</span>
+            <span class="text-xs text-white/50 line-clamp-1">Launch & Smart Platform</span>
+          </button>
+
+          <button class="phase-selector-btn text-left p-5 rounded-lg border border-white/10 bg-pitch-dark hover:border-pitch-emerald/40 transition-all" data-phase="phase4">
+            <span class="phase-number block text-pitch-emerald mb-1">04 / EXPANSION</span>
+            <span class="font-display font-bold text-lg text-white block">2030 — 2031</span>
+            <span class="text-xs text-white/50 line-clamp-1">Full 11s Pitch & Academy</span>
+          </button>
+
+        </div>
+
+        <!-- Detailed Phase Dossier Card -->
+        <div class="p-8 md:p-12 rounded-xl border border-white/10 bg-pitch-dark shadow-xl">
+          <div class="grid lg:grid-cols-12 gap-8 items-start">
+            
+            <!-- Left Info -->
+            <div class="lg:col-span-7">
+              <div class="flex items-center gap-3 mb-2">
+                <span id="phaseNumberDisplay" class="font-mono text-xs uppercase px-2.5 py-1 rounded bg-pitch-emerald/10 text-pitch-emerald border border-pitch-emerald/30">
+                  PHASE 01
+                </span>
+                <span id="phaseYearsDisplay" class="font-mono text-sm text-white/50">
+                  2026 – 2027
+                </span>
+              </div>
+              <h3 id="phaseTitleDisplay" class="font-display font-bold text-2xl sm:text-3xl text-white mb-4">
+                Land Acquisition, Feasibility & Architectural Blueprint
+              </h3>
+              <p id="phaseSummaryDisplay" class="text-white/70 leading-relaxed mb-6">
+                Securing strategic urban-fringe land parcels with high community density, executing environmental soil permeability tests, and drafting sustainable stadium blueprints.
+              </p>
+
+              <!-- Deliverable Milestones -->
+              <h4 class="font-mono text-xs uppercase tracking-wider text-white/40 mb-3">
+                Key Milestone Deliverables:
+              </h4>
+              <ul id="phaseDeliverablesList" class="space-y-3 mb-6">
+                <!-- Populated via JS -->
+              </ul>
+            </div>
+
+            <!-- Right KPIs & Metrics -->
+            <div class="lg:col-span-5 p-6 rounded-lg border border-white/5 bg-white/[0.02] flex flex-col justify-between">
+              
+              <!-- Progress Readiness -->
+              <div class="mb-6">
+                <div class="flex justify-between items-center text-xs font-mono mb-2">
+                  <span class="text-white/50 uppercase">Infrastructure Readiness</span>
+                  <span id="phaseReadinessDisplay" class="text-pitch-emerald font-bold">85%</span>
+                </div>
+                <div class="w-full bg-white/5 rounded-full h-2 overflow-hidden border border-white/10">
+                  <div id="phaseReadinessBar" class="bg-pitch-emerald h-full transition-all duration-700" style="width: 85%;"></div>
+                </div>
+              </div>
+
+              <!-- Stat Boxes -->
+              <div class="grid grid-cols-2 gap-4 mb-6">
+                <div class="p-3 rounded border border-white/5 bg-black/40">
+                  <span class="block text-[11px] font-mono text-white/40 uppercase mb-1">Target Footprint</span>
+                  <span id="phaseSqmDisplay" class="font-display font-bold text-xl text-white">14,000 sqm</span>
+                </div>
+                <div class="p-3 rounded border border-white/5 bg-black/40">
+                  <span class="block text-[11px] font-mono text-white/40 uppercase mb-1">CapEx Allocation</span>
+                  <span id="phaseBudgetDisplay" class="font-display font-bold text-xl text-pitch-emerald">22% Capital Base</span>
+                </div>
+              </div>
+
+              <!-- Investor Download Button -->
+              <button class="open-modal-btn w-full py-3 rounded border border-pitch-emerald text-pitch-emerald hover:bg-pitch-emerald hover:text-black transition-all text-xs font-mono uppercase tracking-widest font-semibold flex items-center justify-center gap-2" data-interest="investor">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                </svg>
+                <span>Request Financial Prospectus</span>
+              </button>
+
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 6. FUTURE RENTAL & PARTNERSHIP MODELS -->
+    <section id="rental" class="py-28 px-6 border-t border-white/5 bg-pitch-dark relative">
+      <div class="max-w-7xl mx-auto">
+        
+        <!-- Header -->
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
+          <div class="max-w-3xl">
+            <div class="flex items-center gap-2 mb-3 font-mono text-xs uppercase tracking-widest text-pitch-emerald">
+              <span class="w-2 h-2 rounded-full bg-pitch-emerald"></span>
+              <span>Section 04 // Commercial Framework</span>
+            </div>
+            <h2 class="font-display font-bold text-3xl sm:text-5xl uppercase tracking-tight text-white mb-4">
+              Rental & Partnership Models
+            </h2>
+            <p class="text-white/70 text-base">
+              Engineered revenue streams balancing accessible amateur hourly play with guaranteed recurring club blocks and high-margin corporate tournament buyouts.
+            </p>
+          </div>
+
+          <div class="font-mono text-xs text-white/40">
+            LAUNCH HORIZON: Q1 2029
+          </div>
+        </div>
+
+        <!-- 3-Column Minimalist Editorial Grid -->
+        <div class="grid md:grid-cols-3 gap-8 mb-16">
+          
+          <!-- Model 1: Hourly Pitch Rental -->
+          <div class="p-8 rounded-lg border border-white/10 bg-pitch-surface flex flex-col justify-between hover:border-pitch-emerald/50 transition-all duration-300 group">
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <span class="font-mono text-xs text-pitch-emerald uppercase tracking-wider">Tier 01 // Community</span>
+                <span class="font-mono text-xs text-white/40">ON-DEMAND</span>
+              </div>
+              <h3 class="font-display font-bold text-2xl text-white mb-3 group-hover:text-pitch-emerald transition-colors">
+                Hourly Pitch Rental
+              </h3>
+              <p class="text-sm text-white/70 leading-relaxed mb-6">
+                Flexible single-session court hire for neighborhood squads, amateur leagues, and pick-up groups. Instant QR gate clearance with transparent peak and off-peak pricing.
+              </p>
+              
+              <ul class="space-y-3 text-xs font-mono text-white/60 mb-8 border-t border-white/5 pt-6">
+                <li class="flex items-center gap-2">
+                  <span class="text-pitch-emerald">✓</span> 60-minute or 90-minute slot increments
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="text-pitch-emerald">✓</span> Automated match recording & shareable link
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="text-pitch-emerald">✓</span> Clean training bibs & FIFA-spec balls in locker
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="text-pitch-emerald">✓</span> Hot shower & locker suite access included
+                </li>
+              </ul>
+            </div>
+
+            <button class="open-modal-btn w-full py-2.5 rounded border border-white/20 text-white hover:border-pitch-emerald hover:text-pitch-emerald text-xs font-mono uppercase tracking-wider transition-all" data-interest="rental">
+              Pre-Register Team
+            </button>
+          </div>
+
+          <!-- Model 2: Club & Community Subscriptions -->
+          <div class="p-8 rounded-lg border-2 border-pitch-emerald/60 bg-pitch-deep/30 relative flex flex-col justify-between hover:border-pitch-emerald transition-all duration-300 group">
+            <div class="absolute -top-3 right-6 px-3 py-0.5 rounded-full bg-pitch-emerald text-black text-[10px] font-mono font-bold uppercase tracking-wider">
+              Guaranteed Priority Slot
+            </div>
+
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <span class="font-mono text-xs text-pitch-emerald uppercase tracking-wider">Tier 02 // Academy</span>
+                <span class="font-mono text-xs text-pitch-emerald">RECURRING BLOCKS</span>
+              </div>
+              <h3 class="font-display font-bold text-2xl text-white mb-3 group-hover:text-pitch-emerald transition-colors">
+                Club & Academy Subscriptions
+              </h3>
+              <p class="text-sm text-white/70 leading-relaxed mb-6">
+                Structured seasonal contracts for accredited youth academies, amateur clubs, and Sunday league franchises. Fixed weekly slots locked for 6 or 12 months.
+              </p>
+              
+              <ul class="space-y-3 text-xs font-mono text-white/60 mb-8 border-t border-white/5 pt-6">
+                <li class="flex items-center gap-2">
+                  <span class="text-pitch-emerald">✓</span> Permanent prime-time slots (no weekly scrambles)
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="text-pitch-emerald">✓</span> Dedicated secured team equipment storage cages
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="text-pitch-emerald">✓</span> 15% concession discount across cafe & recovery baths
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="text-pitch-emerald">✓</span> Custom club branding on clubhouse digital boards
+                </li>
+              </ul>
+            </div>
+
+            <button class="open-modal-btn w-full py-2.5 rounded bg-pitch-emerald text-black hover:bg-white text-xs font-mono uppercase tracking-wider font-bold transition-all" data-interest="subscription">
+              Lock Season Retainer
+            </button>
+          </div>
+
+          <!-- Model 3: Tournament & Corporate Hosting -->
+          <div class="p-8 rounded-lg border border-white/10 bg-pitch-surface flex flex-col justify-between hover:border-pitch-emerald/50 transition-all duration-300 group">
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <span class="font-mono text-xs text-pitch-emerald uppercase tracking-wider">Tier 03 // Enterprise</span>
+                <span class="font-mono text-xs text-white/40">FULL FACILITY BUYOUT</span>
+              </div>
+              <h3 class="font-display font-bold text-2xl text-white mb-3 group-hover:text-pitch-emerald transition-colors">
+                Tournaments & Corporate Buyouts
+              </h3>
+              <p class="text-sm text-white/70 leading-relaxed mb-6">
+                Turnkey sporting and hospitality events for multinational corporations, brand activations, and municipal sports championships.
+              </p>
+              
+              <ul class="space-y-3 text-xs font-mono text-white/60 mb-8 border-t border-white/5 pt-6">
+                <li class="flex items-center gap-2">
+                  <span class="text-pitch-emerald">✓</span> Exclusive multi-pitch complex takeover
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="text-pitch-emerald">✓</span> Elevated mezzanine VIP hospitality & artisan catering
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="text-pitch-emerald">✓</span> Certified tournament referees & medical staff
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="text-pitch-emerald">✓</span> Multi-camera live stream broadcast rig
+                </li>
+              </ul>
+            </div>
+
+            <button class="open-modal-btn w-full py-2.5 rounded border border-white/20 text-white hover:border-pitch-emerald hover:text-pitch-emerald text-xs font-mono uppercase tracking-wider transition-all" data-interest="corporate">
+              Inquire Corporate Booking
+            </button>
+          </div>
+
+        </div>
+
+        <!-- Interactive Utilization & Cost Estimator Calculator -->
+        <div class="p-8 md:p-10 rounded-xl border border-white/10 bg-white/[0.02]">
+          <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
+            <div>
+              <span class="font-mono text-xs uppercase tracking-wider text-pitch-emerald">Interactive Estimator</span>
+              <h3 class="font-display font-bold text-2xl text-white">Capacity & Retainer Modeling</h3>
+            </div>
+            <span class="text-xs font-mono text-white/40">Dynamic rates based on target 2029 operational benchmarks</span>
+          </div>
+
+          <div class="grid md:grid-cols-3 gap-6 items-center">
+            
+            <!-- Control 1: Pitch Type -->
+            <div>
+              <label for="calcPitch" class="block text-xs font-mono uppercase text-white/60 mb-2">Arena Type</label>
+              <select id="calcPitch" class="w-full bg-pitch-dark border border-white/10 rounded p-3 text-sm text-white font-mono focus:border-pitch-emerald focus:outline-none">
+                <option value="futsal">Indoor Futsal (40m × 20m)</option>
+                <option value="mini">Mini Soccer (7-a-Side Hybrid)</option>
+                <option value="full">Regulation Football (11-a-Side Phase 4)</option>
+              </select>
+            </div>
+
+            <!-- Control 2: Tier -->
+            <div>
+              <label for="calcTier" class="block text-xs font-mono uppercase text-white/60 mb-2">Subscription Tier</label>
+              <select id="calcTier" class="w-full bg-pitch-dark border border-white/10 rounded p-3 text-sm text-white font-mono focus:border-pitch-emerald focus:outline-none">
+                <option value="club">Club Recurring (15% Retainer Discount)</option>
+                <option value="standard">Standard Community Booking</option>
+                <option value="corporate">Corporate VIP Hospitality Package</option>
+              </select>
+            </div>
+
+            <!-- Control 3: Slider Hours Per Week -->
+            <div>
+              <div class="flex justify-between items-center mb-2">
+                <label for="calcHours" class="text-xs font-mono uppercase text-white/60">Training Hours</label>
+                <span id="calcHoursVal" class="text-xs font-mono text-pitch-emerald font-bold">4 hrs / week</span>
+              </div>
+              <input type="range" id="calcHours" min="2" max="20" step="1" value="4" class="w-full accent-pitch-emerald cursor-pointer">
+            </div>
+
+          </div>
+
+          <!-- Dynamic Output Banner -->
+          <div class="mt-8 pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div>
+              <span class="block text-xs font-mono text-white/40 uppercase">Projected Rate</span>
+              <span id="calcEstimatedCost" class="font-display font-extrabold text-3xl text-pitch-emerald">$153 / wk</span>
+              <span id="calcAnnualSlots" class="block text-xs font-mono text-white/60">192 hrs / year guaranteed</span>
+            </div>
+
+            <div class="text-right">
+              <span id="calcPerkBadge" class="inline-block px-3 py-1.5 rounded bg-pitch-emerald/10 border border-pitch-emerald/30 text-pitch-emerald text-xs font-mono">
+                Priority Recurring Slot + Free Equipment Locker
+              </span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 7. COLLABORATION, FAQ & PARTNER DOSSIER -->
+    <section id="collaborate" class="py-28 px-6 border-t border-white/5 bg-pitch-surface relative">
+      <div class="max-w-7xl mx-auto">
+        
+        <div class="grid lg:grid-cols-12 gap-16 items-start">
+          
+          <!-- Left Column: Strategic Partner Invitation -->
+          <div class="lg:col-span-6">
+            <div class="flex items-center gap-2 mb-3 font-mono text-xs uppercase tracking-widest text-pitch-emerald">
+              <span class="w-2 h-2 rounded-full bg-pitch-emerald"></span>
+              <span>Section 05 // Strategic Alliances</span>
+            </div>
+            <h2 class="font-display font-bold text-3xl sm:text-5xl uppercase tracking-tight text-white mb-6">
+              Build with TERREIN.
+            </h2>
+            <p class="text-white/70 leading-relaxed mb-8">
+              We are actively evaluating long-term opportunities across four primary stakeholder categories ahead of Phase 01 site acquisition and capital allocation:
+            </p>
+
+            <div class="space-y-4">
+              <div class="p-4 rounded border border-white/10 bg-pitch-dark flex items-start gap-4">
+                <span class="font-mono text-pitch-emerald font-bold text-sm">01</span>
+                <div>
+                  <h4 class="font-bold text-white text-sm mb-1">Landowners & Urban Developers</h4>
+                  <p class="text-xs text-white/60">
+                    Seeking 10,000–30,000 sqm parcels suitable for sports zoning under 25-to-30-year long-term ground leases or equity joint ventures.
+                  </p>
+                </div>
+              </div>
+
+              <div class="p-4 rounded border border-white/10 bg-pitch-dark flex items-start gap-4">
+                <span class="font-mono text-pitch-emerald font-bold text-sm">02</span>
+                <div>
+                  <h4 class="font-bold text-white text-sm mb-1">Impact & Sports Capital Partners</h4>
+                  <p class="text-xs text-white/60">
+                    Institutional investors and syndicates seeking asset-backed infrastructure yields paired with measured social health outcomes.
+                  </p>
+                </div>
+              </div>
+
+              <div class="p-4 rounded border border-white/10 bg-pitch-dark flex items-start gap-4">
+                <span class="font-mono text-pitch-emerald font-bold text-sm">03</span>
+                <div>
+                  <h4 class="font-bold text-white text-sm mb-1">Football Academies & Municipal Clubs</h4>
+                  <p class="text-xs text-white/60">
+                    Secure dedicated flagship training grounds with priority fixture bookings prior to public commercial launch.
+                  </p>
+                </div>
+              </div>
+
+              <div class="p-4 rounded border border-white/10 bg-pitch-dark flex items-start gap-4">
+                <span class="font-mono text-pitch-emerald font-bold text-sm">04</span>
+                <div>
+                  <h4 class="font-bold text-white text-sm mb-1">Athletic & Beverage Sponsors</h4>
+                  <p class="text-xs text-white/60">
+                    Exclusive venue naming rights, pitch sideline LED boards, and recovery cafe beverage pouring covenants.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Interactive FAQ Accordion -->
+          <div class="lg:col-span-6">
+            <h3 class="font-display font-bold text-2xl text-white mb-6 uppercase">
+              Frequently Addressed Inquiries
+            </h3>
+
+            <div class="space-y-4">
+              
+              <!-- FAQ 1 -->
+              <div class="faq-item border border-white/10 rounded-lg bg-pitch-dark overflow-hidden">
+                <button class="faq-trigger w-full px-6 py-4 text-left flex items-center justify-between text-white hover:text-pitch-emerald transition-colors">
+                  <span class="font-medium text-sm">What is the projected IRR and payback horizon for Phase 01 & 02?</span>
+                  <svg class="faq-icon w-4 h-4 transform transition-transform duration-300 text-pitch-emerald flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                  </svg>
+                </button>
+                <div class="faq-answer hidden px-6 pb-5 text-xs text-white/70 leading-relaxed border-t border-white/5 pt-3">
+                  Our financial model targets an unlevered operational IRR of 18.4% over an 8-year horizon, with capital payback projected within 4.2 years of Phase 02 commercial launch. Complete pro-forma models are disclosed under NDA.
+                </div>
+              </div>
+
+              <!-- FAQ 2 -->
+              <div class="faq-item border border-white/10 rounded-lg bg-pitch-dark overflow-hidden">
+                <button class="faq-trigger w-full px-6 py-4 text-left flex items-center justify-between text-white hover:text-pitch-emerald transition-colors">
+                  <span class="font-medium text-sm">How does the sub-drainage perform during extreme monsoon rain?</span>
+                  <svg class="faq-icon w-4 h-4 transform transition-transform duration-300 text-pitch-emerald flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                  </svg>
+                </button>
+                <div class="faq-answer hidden px-6 pb-5 text-xs text-white/70 leading-relaxed border-t border-white/5 pt-3">
+                  Each outdoor mini and full pitch incorporates a 250mm dual-layer perforated pipe manifold set in washed volcanic aggregates. Water is evacuated at 150mm/hour into subterranean retention tanks, recycling 70% of stormwater for landscaping and clubhouse graywater.
+                </div>
+              </div>
+
+              <!-- FAQ 3 -->
+              <div class="faq-item border border-white/10 rounded-lg bg-pitch-dark overflow-hidden">
+                <button class="faq-trigger w-full px-6 py-4 text-left flex items-center justify-between text-white hover:text-pitch-emerald transition-colors">
+                  <span class="font-medium text-sm">Can landowners contribute raw land in exchange for equity?</span>
+                  <svg class="faq-icon w-4 h-4 transform transition-transform duration-300 text-pitch-emerald flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                  </svg>
+                </button>
+                <div class="faq-answer hidden px-6 pb-5 text-xs text-white/70 leading-relaxed border-t border-white/5 pt-3">
+                  Yes. We offer structured Special Purpose Vehicle (SPV) equity partnerships where verified landowners contribute parcels as equity in exchange for recurring quarterly revenue distributions and capital appreciation.
+                </div>
+              </div>
+
+              <!-- FAQ 4 -->
+              <div class="faq-item border border-white/10 rounded-lg bg-pitch-dark overflow-hidden">
+                <button class="faq-trigger w-full px-6 py-4 text-left flex items-center justify-between text-white hover:text-pitch-emerald transition-colors">
+                  <span class="font-medium text-sm">When will initial early team pre-registration open?</span>
+                  <svg class="faq-icon w-4 h-4 transform transition-transform duration-300 text-pitch-emerald flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                  </svg>
+                </button>
+                <div class="faq-answer hidden px-6 pb-5 text-xs text-white/70 leading-relaxed border-t border-white/5 pt-3">
+                  Pre-registration for local clubs and amateur franchises commences in Q3 2028 ahead of the Q1 2029 Grand Inaugural Invitational Cup. Early registrants lock in foundational lifetime rate protections.
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Instant Contact Trigger Card -->
+            <div class="mt-8 p-6 rounded-lg border border-pitch-emerald/30 bg-pitch-emerald/5 flex items-center justify-between">
+              <div>
+                <span class="font-mono text-xs text-pitch-emerald uppercase block mb-1">Direct Partner Channel</span>
+                <span class="text-sm font-semibold text-white">Request Executive Memorandum</span>
+              </div>
+              <button class="open-modal-btn px-4 py-2 rounded bg-pitch-emerald text-black text-xs font-mono uppercase font-bold hover:bg-white transition-colors" data-interest="investor">
+                Initiate Contact
+              </button>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- 8. REFINED EDITORIAL FOOTER -->
+  <footer class="border-t border-white/10 bg-black py-16 px-6">
+    <div class="max-w-7xl mx-auto">
+      
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-12 mb-16">
+        
+        <!-- Brand & Vision Statement -->
+        <div class="md:col-span-5">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-7 h-7 rounded-sm bg-white/10 border border-pitch-emerald/50 flex items-center justify-center">
+              <div class="w-3 h-3 border-2 border-pitch-emerald rotate-45"></div>
+            </div>
+            <span class="font-display font-extrabold text-2xl tracking-tight text-white">TERREIN</span>
+          </div>
+          <p class="text-sm text-white/60 leading-relaxed max-w-sm mb-6">
+            A 5-year structured masterplan developing community-centric sports arenas specializing in Futsal, Mini Soccer, and full regulation football pitches.
+          </p>
+          <div class="font-mono text-xs text-white/40 space-y-1">
+            <p>LAT/LONG: 07°08'32"S 112°44'11"E</p>
+            <p>PORTFOLIO SCHEDULE: 2026 TO 2031</p>
+          </div>
+        </div>
+
+        <!-- Sitemap Navigation -->
+        <div class="md:col-span-2">
+          <h4 class="font-mono text-xs uppercase tracking-widest text-pitch-emerald mb-4">Architecture</h4>
+          <ul class="space-y-2 text-xs font-mono text-white/60">
+            <li><a href="#vision" class="hover:text-white transition-colors">Strategic Thesis</a></li>
+            <li><a href="#arenas" class="hover:text-white transition-colors">Indoor Futsal Arena</a></li>
+            <li><a href="#arenas" class="hover:text-white transition-colors">Mini Soccer 7-a-Side</a></li>
+            <li><a href="#arenas" class="hover:text-white transition-colors">Full 11s Stadium</a></li>
+            <li><a href="#arenas" class="hover:text-white transition-colors">Recovery Clubhouse</a></li>
+          </ul>
+        </div>
+
+        <!-- Partnerships -->
+        <div class="md:col-span-2">
+          <h4 class="font-mono text-xs uppercase tracking-widest text-pitch-emerald mb-4">Engagement</h4>
+          <ul class="space-y-2 text-xs font-mono text-white/60">
+            <li><a href="#roadmap" class="hover:text-white transition-colors">Phase 1 Permitting</a></li>
+            <li><a href="#rental" class="hover:text-white transition-colors">Club Retainers</a></li>
+            <li><a href="#rental" class="hover:text-white transition-colors">Corporate Buyouts</a></li>
+            <li><a href="#" class="open-modal-btn hover:text-white transition-colors" data-interest="landowner">Landowner SPV</a></li>
+            <li><a href="#" class="open-modal-btn hover:text-white transition-colors" data-interest="investor">CapEx Inquiries</a></li>
+          </ul>
+        </div>
+
+        <!-- Newsletter / Deck Subscription -->
+        <div class="md:col-span-3">
+          <h4 class="font-mono text-xs uppercase tracking-widest text-pitch-emerald mb-4">Quarterly Briefing</h4>
+          <p class="text-xs text-white/60 mb-3">
+            Subscribe to our confidential architectural milestone dispatch.
+          </p>
+          <form onsubmit="event.preventDefault(); alert('Thank you. You have been added to the Terrein 2026–2031 quarterly dispatch list.');" class="flex items-center gap-2">
+            <input type="email" placeholder="partner@domain.com" required class="bg-pitch-surface border border-white/10 rounded px-3 py-2 text-xs text-white placeholder-white/30 focus:border-pitch-emerald focus:outline-none w-full font-mono">
+            <button type="submit" class="px-4 py-2 rounded bg-pitch-emerald text-black text-xs font-mono font-bold hover:bg-white transition-colors">
+              Join
+            </button>
+          </form>
+        </div>
+
+      </div>
+
+      <!-- Bottom Legal & Disclaimer Bar -->
+      <div class="pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-white/40">
+        <p>© 2026 TERREIN SPORTS VENUES & ARENAS CORP. ALL RIGHTS RESERVED.</p>
+        <div class="flex items-center gap-6">
+          <a href="#" class="hover:text-white">Confidentiality Protocol</a>
+          <a href="#" class="hover:text-white">Masterplan Disclosures</a>
+          <a href="#hero" class="text-pitch-emerald hover:underline">Back to Apex ↑</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- 9. STRATEGIC INQUIRY & INVESTOR MODAL -->
+  <div id="partnerModal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 modal-backdrop transition-opacity duration-300" role="dialog" aria-modal="true">
+    
+    <div class="relative w-full max-w-xl bg-pitch-dark border border-white/15 rounded-xl shadow-2xl p-6 sm:p-8 overflow-hidden">
+      
+      <!-- Close Button -->
+      <button id="closeModalBtn" class="absolute top-5 right-5 text-white/50 hover:text-white text-lg focus:outline-none" aria-label="Close dialog">
+        ✕
+      </button>
+
+      <!-- Modal Header -->
+      <div class="mb-6">
+        <span class="font-mono text-xs text-pitch-emerald uppercase tracking-widest">Confidential Dialogue</span>
+        <h3 class="font-display font-bold text-2xl text-white mt-1">Connect with the TERREIN Steering Committee</h3>
+        <p class="text-xs text-white/60 mt-1">
+          Direct communication for landowners, capital partners, corporate event heads, and academy directors.
+        </p>
+      </div>
+
+      <!-- Form Success Notice -->
+      <div id="formSuccessNotice" class="hidden p-6 rounded border border-pitch-emerald bg-pitch-emerald/10 text-center">
+        <div class="w-12 h-12 rounded-full bg-pitch-emerald/20 text-pitch-emerald flex items-center justify-center mx-auto mb-3">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+          </svg>
+        </div>
+        <h4 class="font-display font-bold text-lg text-white mb-1">Dossier Transmitted Successfully</h4>
+        <p class="text-xs text-white/70">
+          Our strategic development office will review your inquiry and follow up within 24 business hours.
+        </p>
+      </div>
+
+      <!-- Modal Form -->
+      <form id="partnerInquiryForm" class="space-y-4">
+        
+        <div>
+          <label for="interestType" class="block text-xs font-mono uppercase text-white/60 mb-1">Stakeholder Category</label>
+          <select id="interestType" class="w-full bg-pitch-surface border border-white/15 rounded px-3 py-2.5 text-xs text-white font-mono focus:border-pitch-emerald focus:outline-none">
+            <option value="investor">Institutional Investor / Capital Syndicate</option>
+            <option value="landowner">Landowner / Property Development Joint Venture</option>
+            <option value="facility">Architectural & Construction Vendor</option>
+            <option value="subscription">Club or Academy Director (Seasonal Retainer)</option>
+            <option value="corporate">Corporate Tournament & Hospitality Booking</option>
+          </select>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label for="fullName" class="block text-xs font-mono uppercase text-white/60 mb-1">Full Name</label>
+            <input type="text" id="fullName" required placeholder="Alex Mercer" class="w-full bg-pitch-surface border border-white/15 rounded px-3 py-2 text-xs text-white focus:border-pitch-emerald focus:outline-none font-mono">
+          </div>
+          <div>
+            <label for="organization" class="block text-xs font-mono uppercase text-white/60 mb-1">Entity / Organization</label>
+            <input type="text" id="organization" placeholder="Apex Capital / FC United" class="w-full bg-pitch-surface border border-white/15 rounded px-3 py-2 text-xs text-white focus:border-pitch-emerald focus:outline-none font-mono">
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label for="email" class="block text-xs font-mono uppercase text-white/60 mb-1">Business Email</label>
+            <input type="email" id="email" required placeholder="alex@mercer.com" class="w-full bg-pitch-surface border border-white/15 rounded px-3 py-2 text-xs text-white focus:border-pitch-emerald focus:outline-none font-mono">
+          </div>
+          <div>
+            <label for="phone" class="block text-xs font-mono uppercase text-white/60 mb-1">Direct Phone</label>
+            <input type="tel" id="phone" placeholder="+1 (555) 019-2834" class="w-full bg-pitch-surface border border-white/15 rounded px-3 py-2 text-xs text-white focus:border-pitch-emerald focus:outline-none font-mono">
+          </div>
+        </div>
+
+        <div>
+          <label for="inquiryDetails" class="block text-xs font-mono uppercase text-white/60 mb-1">Inquiry Scope / Location / Proposal</label>
+          <textarea id="inquiryDetails" rows="3" placeholder="Provide overview of land parcel size, capital parameters, or seasonal court requirements..." class="w-full bg-pitch-surface border border-white/15 rounded px-3 py-2 text-xs text-white focus:border-pitch-emerald focus:outline-none font-mono"></textarea>
+        </div>
+
+        <div class="pt-2">
+          <button type="submit" class="w-full py-3 rounded bg-pitch-emerald text-black text-xs font-mono uppercase tracking-widest font-bold hover:bg-white transition-colors flex items-center justify-center gap-2">
+            <span>Transmit Inquiry to Steering Committee</span>
+            <span>→</span>
+          </button>
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+
+  <!-- Interactive JavaScript Engine -->
+  <script src="assets/js/ink-reveal.js"></script>
+
+</body>
+</html>
+
